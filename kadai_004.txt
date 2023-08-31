@@ -1,1 +1,86 @@
 #ターミナルのコマンドライン
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+nishinoyuukinoiMac-2:~ yukinshino$ lst
+bash: lst: command not found
+nishinoyuukinoiMac-2:~ yukinshino$ mkdir git-challenge
+nishinoyuukinoiMac-2:~ yukinshino$ cd git-challenge
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git init
+Initialized empty Git repository in /Users/yukinshino/git-challenge/.git/
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "#Hello, world!" >> hello_world.txt
+bash: !": event not found
+nishinoyuukinoiMac-2:git-challenge yukinshino$ ls
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "#Hello, world!" >> hello_world.txt
+bash: !": event not found
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "Hello, world'!' >> hello_world.txt
+bash: !: event not found
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "Hello, world'!'" >> hello_world.txt
+bash: !: event not found
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "Hello, world!" >> hello_world.txt
+bash: !": event not found
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "Hellp, world\!" >> hello_world.txt
+nishinoyuukinoiMac-2:git-challenge yukinshino$ ls
+hello_world.txt
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git add hello_world.txt
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git add .
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git commit -m
+error: switch `m' requires a value
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git commit -m "日本語訳を追記"
+[main (root-commit) 27963ae] 日本語訳を追記
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git status
+On branch main
+nothing to commit, working tree clean
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git diff --staged
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git log
+commit 27963ae72a055c4d2f262f3dc2ac2a304c2a4aa9 (HEAD -> main)
+Author: Flying-NocchiMan <rgz91rx93paris.0214@gmail.com>
+Date:   Thu Aug 31 20:09:07 2023 +0900
+
+    日本語訳を追記
+nishinoyuukinoiMac-2:git-challenge yukinshino$ echo "#こんにちは、世界 \!" >> hello_world.
+txt
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git commit -m "hello_world.txtを追加"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git add .
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git commit -m "hello_world.txtを追加"
+[main 840a0c4] hello_world.txtを追加
+ 1 file changed, 1 insertion(+)
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git status
+On branch main
+nothing to commit, working tree clean
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git diff hello_world.txt
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git diff --staged
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git log
+commit 840a0c43b2f471cbca8e44cb0c253d8a2b6505d4 (HEAD -> main)
+Author: Flying-NocchiMan <rgz91rx93paris.0214@gmail.com>
+Date:   Thu Aug 31 20:16:03 2023 +0900
+
+    hello_world.txtを追加
+
+commit 27963ae72a055c4d2f262f3dc2ac2a304c2a4aa9
+Author: Flying-NocchiMan <rgz91rx93paris.0214@gmail.com>
+Date:   Thu Aug 31 20:09:07 2023 +0900
+
+    日本語訳を追記
+nishinoyuukinoiMac-2:git-challenge yukinshino$ git log --oneline
+840a0c4 (HEAD -> main) hello_world.txtを追加
+27963ae 日本語訳を追記
+nishinoyuukinoiMac-2:git-challenge yukinshino$ ;
